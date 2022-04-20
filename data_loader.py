@@ -1,13 +1,12 @@
 import numpy as np
 
 
-def load_us_cities(normalize=True):
+def load_cities(source, normalize=True):
     cities = np.array(
         list(
             map(
                 lambda line: list(map(int, line.split())),
-                # open("att48_xy.txt").readlines(),
-                open("ena/instances/tsp_22", "r").readlines()
+                open(f"city_data/{source}", "r").readlines()
             )
         )
     )
